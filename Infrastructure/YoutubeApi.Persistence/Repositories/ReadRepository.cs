@@ -10,13 +10,14 @@ namespace YoutubeApi.Persistence.Repositories
 {
     public class ReadRepository<T> : IReadRepository<T> where T : class, IEntityBase, new()
     {
-        private readonly AppDbContext appDbContext;
+        private readonly AppDbContext _appDbContext;
 
         public ReadRepository(AppDbContext appDbContext)
         {
-            this.appDbContext = appDbContext;
+            _appDbContext = appDbContext;
         }
-        private DbSet<T> Table { get => appDbContext.Set<T>(); }
+
+        private DbSet<T> Table { get => _appDbContext.Set<T>(); }
 
         /// <summary>
         /// Veritabanından kayıtları asenkron olarak çeker. 
