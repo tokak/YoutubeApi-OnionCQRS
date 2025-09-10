@@ -1,3 +1,5 @@
+using YoutubeApi.Persistence;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,7 +19,9 @@ builder.Configuration
     // appsettings.json dosyasýný zorunlu olarak yükler (bulunmazsa hata verir).
 
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
-// Ortama özel (örn: appsettings.Development.json) yapýlandýrmayý ekler (bulunmazsa hata vermez).
+    // Ortama özel (örn: appsettings.Development.json) yapýlandýrmayý ekler (bulunmazsa hata vermez).
+
+builder.Services.AddPersistence(builder.Configuration);
 
 
 var app = builder.Build();
