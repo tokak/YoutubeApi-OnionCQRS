@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeApi.Persistence", "Infrastructure\YoutubeApi.Persistence\YoutubeApi.Persistence.csproj", "{DB2F76CF-091F-48C1-A1D2-2B7DA82236FE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeApi.WepApi", "Presentation\YoutubeApi.WepApi\YoutubeApi.WepApi.csproj", "{0DC0B60F-CA11-450E-8CCE-ECAE1537A406}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeApi.Mapper", "..\Core\YoutubeApiSln\YoutubeApi.Mapper\YoutubeApi.Mapper.csproj", "{5F1FC6A3-6F75-48B9-B2A5-775A30BE2739}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{0DC0B60F-CA11-450E-8CCE-ECAE1537A406}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DC0B60F-CA11-450E-8CCE-ECAE1537A406}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DC0B60F-CA11-450E-8CCE-ECAE1537A406}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F1FC6A3-6F75-48B9-B2A5-775A30BE2739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1FC6A3-6F75-48B9-B2A5-775A30BE2739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1FC6A3-6F75-48B9-B2A5-775A30BE2739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1FC6A3-6F75-48B9-B2A5-775A30BE2739}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{74F32EDE-9EE8-455E-9A99-DBA830C6413E} = {269FE95D-DA7A-4C22-BA0A-E4C1F0DBAFFE}
 		{DB2F76CF-091F-48C1-A1D2-2B7DA82236FE} = {269FE95D-DA7A-4C22-BA0A-E4C1F0DBAFFE}
 		{0DC0B60F-CA11-450E-8CCE-ECAE1537A406} = {04D0774A-06B1-431F-9F49-08208C6BFECE}
+		{5F1FC6A3-6F75-48B9-B2A5-775A30BE2739} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2FFF953-8092-4F0E-BB46-60F751F6D3B9}
