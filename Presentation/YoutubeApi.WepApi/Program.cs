@@ -1,4 +1,5 @@
 using YoutubeApi.Persistence;
+using YoutubeApi.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +23,7 @@ builder.Configuration
     // Ortama özel (örn: appsettings.Development.json) yapýlandýrmayý ekler (bulunmazsa hata vermez).
 
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddApplication();
 
 
 var app = builder.Build();
