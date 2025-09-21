@@ -5,7 +5,7 @@ using YoutubeApi.Domain.Entities;
 
 namespace YoutubeApi.Application.Features.Products.Command.UpdateProduct
 {
-    public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest>
+    public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommandRequest,Unit>
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
@@ -14,7 +14,7 @@ namespace YoutubeApi.Application.Features.Products.Command.UpdateProduct
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
+        public async Task<Unit> Handle(UpdateProductCommandRequest request, CancellationToken cancellationToken)
         {
             // İlgili ürünü veritabanından getir (silinmemiş olan)
             var product = await _unitOfWork.GetReadRepository<Product>().GetAsync(x => x.Id == request.Id && !x.IsDeleted);
@@ -37,6 +37,8 @@ namespace YoutubeApi.Application.Features.Products.Command.UpdateProduct
 
             // Tüm değişiklikleri kaydet
             await _unitOfWork.SaveAsync();
+
+            return Unit.Value;
         }
 
     }
