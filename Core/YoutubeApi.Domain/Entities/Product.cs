@@ -11,7 +11,7 @@ namespace YoutubeApi.Domain.Entities
         public  decimal Discount { get; set; } //indirim olursa uygulayalım diye yazıldı
 
         public Brand Brand { get; set; }
-        public ICollection<Category> Categories { get; set; }
+        public ICollection<ProductCategory> ProductCategories { get; set; }
         //public required string ImagePath { get; set; }
     }
 }

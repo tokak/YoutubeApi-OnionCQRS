@@ -4,6 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <ApplicationManifest>Features\Products\Command\CreateProduct\CreateProductCommandHandler.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,10 +14,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\YoutubeApi.Domain\YoutubeApi.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Features\Products\Command\" />
   </ItemGroup>
 
 </Project>
