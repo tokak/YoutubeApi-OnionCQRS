@@ -8,6 +8,7 @@ namespace YoutubeApi.Application.Interfaces.Repositories
         Task AddRangeAsync(IList<T> entities);
         Task<T> UpdateAsync(T entity);
         Task HardDeleteAsync(T entity);//Veritabanından silme işlemi
+        Task HardDeleteRangeAsync(IList<T> entity);
         Task SoftDeleteAsync(T entity);//silmeme işlemi
     }
 }
