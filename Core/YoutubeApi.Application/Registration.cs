@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using YoutubeApi.Application.Exceptions;
 
 namespace YoutubeApi.Application
 {
@@ -16,6 +17,8 @@ namespace YoutubeApi.Application
             // MediatR servislerini dependency injection container'a ekliyoruz
             // Ve bu assembly içindeki tüm IRequestHandler, INotificationHandler vb. sınıfları otomatik kaydediyoruz
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
+
+            services.AddTransient<ExceptionMiddleware>();
         }
     }
 
