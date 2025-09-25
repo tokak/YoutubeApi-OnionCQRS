@@ -3,15 +3,15 @@ using YoutubeApi.Application;
 using YoutubeApi.Mapper;
 using YoutubeApi.Application.Exceptions;
 using YoutubeApi.Infrastructure;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-//builder.Services.AddOpenApi();
-builder.Services.AddSwaggerGen();
+
+
 var env = builder.Environment;
 // Uygulamanýn çalýþtýðý ortam bilgilerini (Development, Production vb.) alýr.
 
@@ -23,13 +23,40 @@ builder.Configuration
     // appsettings.json dosyasýný zorunlu olarak yükler (bulunmazsa hata verir).
 
     .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
-    // Ortama özel (örn: appsettings.Development.json) yapýlandýrmayý ekler (bulunmazsa hata vermez).
+// Ortama özel (örn: appsettings.Development.json) yapýlandýrmayý ekler (bulunmazsa hata vermez).
 
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Youtube API", Version = "v1", Description = "Youtube API swagger client." });
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey,
+        Scheme = "Bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "'Bearer' yazipp bosluk biraktiktan sonra Token'i Girebilirsiniz \r\n\r\n Örnegin: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\""
+    });
+    c.AddSecurityRequirement(new OpenApiSecurityRequirement()
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
 
+    });
+});
 
 var app = builder.Build();
 
