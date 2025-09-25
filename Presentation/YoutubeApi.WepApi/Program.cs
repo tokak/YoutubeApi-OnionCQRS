@@ -2,6 +2,7 @@ using YoutubeApi.Persistence;
 using YoutubeApi.Application;
 using YoutubeApi.Mapper;
 using YoutubeApi.Application.Exceptions;
+using YoutubeApi.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,7 @@ builder.Configuration
     // Ortama özel (örn: appsettings.Development.json) yapýlandýrmayý ekler (bulunmazsa hata vermez).
 
 builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddApplication();
 builder.Services.AddCustomMapper();
 
