@@ -27,6 +27,7 @@ builder.Configuration
 
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+//builder.Services.AddSwaggerGen();
 
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -73,6 +74,7 @@ if (app.Environment.IsDevelopment())
 
 app.ConfigureExceptionHandlingMiddleware();
 
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
