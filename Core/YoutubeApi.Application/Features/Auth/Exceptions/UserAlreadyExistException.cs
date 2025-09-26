@@ -6,8 +6,5 @@ namespace YoutubeApi.Application.Features.Auth.Exceptions
     {
         public UserAlreadyExistException() : base("Böyle bir kullanıcı zaten var") { }
     }
-    public class EmailOrPasswordShouldNotBeInvalidException : BaseException
-    {
-        public EmailOrPasswordShouldNotBeInvalidException() : base("Kullanıcı adı veya şifre yanlış") { }
-    }
+   
 }
