@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 
-namespace YoutubeApi.Application.Features.Auth.RefreshToken
+namespace YoutubeApi.Application.Features.Auth.Command.RefreshToken
 {
     public class RefreshTokenCommandValidator:AbstractValidator<RefreshTokenCommandRequest>
     {

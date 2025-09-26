@@ -10,7 +10,7 @@ using YoutubeApi.Application.Interfaces.Tokens;
 using YoutubeApi.Application.Interfaces.UnitOfWorks;
 using YoutubeApi.Domain.Entities;
 
-namespace YoutubeApi.Application.Features.Auth.RefreshToken
+namespace YoutubeApi.Application.Features.Auth.Command.RefreshToken
 {
     public class RefreshTokenCommandHandler : BasesHandler, IRequestHandler<RefreshTokenCommandRequest, RefreshTokenCommandResponse>
     {
@@ -39,7 +39,8 @@ namespace YoutubeApi.Application.Features.Auth.RefreshToken
 
             user.RefreshToken = newRefreshToken;
             await userManager.UpdateAsync(user);
-            return new({
+            return new()
+            {
                 RefreshToken = newRefreshToken,
                 AccessToken = new JwtSecurityTokenHandler().WriteToken(newAccessToken)
             };
