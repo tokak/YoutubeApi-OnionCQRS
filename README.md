@@ -4,17 +4,18 @@ Bu proje,  Onion Architecture (Soğan Mimarisi) ve CQRS  tasarım desenlerini te
 
 ### Kullanılan Teknolojiler ve Katmanlar
 
-### Katman	                                            Açıklama
-- ASP.NET Core 9 Web API              	Ana API projesi ve sunum katmanı
-- Onion Architecture	                  Temiz ve sürdürülebilir mimari yaklaşımı
-- CQRS & MediatR	                      Komut ve sorgu ayrımı; işleme yönlendirmesi
-- JWT Authentication	                  Erişim Belirteci (Token) ve Yenileme Belirteci (Refresh Token) ile kimlik doğrulama
-- ASP.NET Identity	                    Kullanıcı ve rol yönetimi
-- Entity Framework Core	SQL Server      Veritabanı işlemleri
-- FluentValidation	                    İşlem hattı (Pipeline) tabanlı request doğrulama
-- Redis Cache	                          Okuma işlemlerini hızlandırmak için önbellekleme mekanizması
-- AutoMapper	                          DTO ↔ Entity dönüşümlerinin kolaylaştırılması
-- Swagger	API                           dökümantasyonu ve test arayüzü
+| Katman                                | Açıklama                                                                 |
+|---------------------------------------|--------------------------------------------------------------------------|
+| **ASP.NET Core 9 Web API**           | Ana API projesi ve sunum katmanı                                        |
+| **Onion Architecture**               | Temiz ve sürdürülebilir mimari yaklaşımı                                |
+| **CQRS & MediatR**                   | Komut ve sorgu ayrımı; işleme yönlendirmesi                             |
+| **JWT Authentication**              | Erişim Belirteci (Token) ve Yenileme Belirteci (Refresh Token) ile kimlik doğrulama |
+| **ASP.NET Identity**                | Kullanıcı ve rol yönetimi                                               |
+| **Entity Framework Core (SQL Server)** | Veritabanı işlemleri                                                  |
+| **FluentValidation**                | İşlem hattı (Pipeline) tabanlı request doğrulama                        |
+| **Redis Cache**                     | Okuma işlemlerini hızlandırmak için önbellekleme mekanizması            |
+| **AutoMapper**                      | DTO ↔ Entity dönüşümlerinin kolaylaştırılması                           |
+| **Swagger**                         | API dökümantasyonu ve test arayüzü       
 
 ### Kurulum
 "ConnectionStrings": {
